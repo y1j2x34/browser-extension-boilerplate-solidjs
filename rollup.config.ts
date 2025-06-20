@@ -11,7 +11,7 @@ export default defineConfig({
         panel: 'src/pages/panel/index.html',
     },
     output: {
-        dir: 'dist',
+        dir: 'dist/' + (process.env.BROWSER || 'chromium'),
         format: 'esm',
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',

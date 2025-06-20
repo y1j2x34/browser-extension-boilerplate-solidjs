@@ -12,6 +12,7 @@
         "start:firefox": "cross-env BROWSER=firefox vite build",
         "build:chromium": "cross-env BROWSER=chromium vite build",
         "build:firefox": "cross-env BROWSER=firefox vite build",
+        "build:all": "npm run build:chromium && npm run build:firefox",
         "format": "eslint --fix"
     },
     "devDependencies": {
