@@ -1,0 +1,53 @@
+{
+    "name": "browser-extension-boilerplate-solidjs",
+    "version": "5.0.4",
+    "description": "A browser extension boilerplate built with SolidJS, Vite, and TypeScript",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/y1j2x34/browser-extension-boilerplate-solidjs.git"
+    },
+    "scripts": {
+        "start:chromium": "cross-env BROWSER=chromium vite dev",
+        "start:firefox": "cross-env BROWSER=firefox vite build",
+        "build:chromium": "cross-env BROWSER=chromium vite build",
+        "build:firefox": "cross-env BROWSER=firefox vite build",
+        "format": "eslint --fix"
+    },
+    "devDependencies": {
+        "@crxjs/vite-plugin": "^2.0.2",
+        "@eslint/js": "^9.29.0",
+        "@solidjs/testing-library": "^0.8.10",
+        "@types/chrome": "^0.0.326",
+        "@types/node": "^24.0.3",
+        "@types/webextension-polyfill": "^0.12.3",
+        "autoprefixer": "^10.4.21",
+        "cross-env": "^7.0.3",
+        "eslint": "^9.29.0",
+        "eslint-config-prettier": "^10.1.5",
+        "eslint-plugin-prettier": "^5.5.0",
+        "eslint-plugin-solid": "^0.14.5",
+        "globals": "^16.2.0",
+        "postcss": "^8.5.6",
+        "postcss-load-config": "^6.0.1",
+        "prettier": "^3.5.3",
+        "rollup": "^4.44.0",
+        "sharp": "^0.34.2",
+        "svgo": "^3.3.2",
+        "tailwindcss": "^4.1.10",
+        "tslib": "^2.8.1",
+        "typedoc": "^0.28.5",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.34.1",
+        "vite": "^6.3.5",
+        "vite-plugin-image-optimizer": "^1.1.9",
+        "vite-plugin-solid": "^2.11.6",
+        "vite-plugin-zip-pack": "^1.2.4",
+        "vitest": "^3.2.4",
+        "whatwg-fetch": "^3.6.20"
+    },
+    "dependencies": {
+        "solid-js": "^1.9.7",
+        "webextension-polyfill": "^0.12.0"
+    }
+}
