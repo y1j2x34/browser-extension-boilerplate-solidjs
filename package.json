@@ -9,14 +9,14 @@
     },
     "scripts": {
         "start:chromium": "cross-env BROWSER=chromium vite dev",
-        "start:firefox": "cross-env BROWSER=firefox vite build",
+        "start:firefox": "cross-env BROWSER=firefox vite dev",
         "build:chromium": "cross-env BROWSER=chromium vite build",
         "build:firefox": "cross-env BROWSER=firefox vite build",
         "build:all": "npm run build:chromium && npm run build:firefox",
         "format": "eslint --fix"
     },
     "devDependencies": {
-        "@crxjs/vite-plugin": "^2.0.2",
+        "@crxjs/vite-plugin": "latest",
         "@eslint/js": "^9.29.0",
         "@solidjs/testing-library": "^0.8.10",
         "@types/chrome": "^0.0.326",

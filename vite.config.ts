@@ -22,7 +22,7 @@ const isWatch = process.argv.includes('--watch');
 // };
 export default defineConfig({
     server: {
-        port: 3000,
+        port: process.env.PORT ? parseInt(process.env.PORT) : 7331,
     },
     plugins: [
         solidPlugin({}),
@@ -32,6 +32,7 @@ export default defineConfig({
             contentScripts: {
                 injectCss: true,
             },
+            browser: process.env.BROWSER === 'firefox' ? 'firefox' : 'chrome',
         }),
         isWatch
             ? []
@@ -53,3 +54,4 @@ export default defineConfig({
         rollupOptions,
     },
 });
+console.log(manifest);
