@@ -52,13 +52,4 @@ export default defineConfig({
         emptyOutDir: true,
         rollupOptions,
     },
-    test: {
-        environment: 'jsdom',
-        globals: true,
-        setupFiles: ['node_modules/@testing-library/jest-dom/vitest', 'node_modules/whatwg-fetch/fetch.js'],
-        isolate: false,
-        coverage: {
-            reporter: ['text-summary', 'cobertura', 'html'],
-        },
-    },
 });
