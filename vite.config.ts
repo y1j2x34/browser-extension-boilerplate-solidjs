@@ -3,6 +3,8 @@ import { defineConfig, PluginOption } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { crx } from '@crxjs/vite-plugin';
 import zipPack from 'vite-plugin-zip-pack';
+import tailwindcss from '@tailwindcss/vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import manifest from './manifest.config';
 import { name, version } from './package.json';
@@ -26,6 +28,8 @@ export default defineConfig({
     },
     plugins: [
         solidPlugin({}),
+        tailwindcss(),
+        tsconfigPaths(),
         // process.env.BROWSER === 'chromium' ? viteManifestHackIssue846 : null,
         crx({
             manifest,
