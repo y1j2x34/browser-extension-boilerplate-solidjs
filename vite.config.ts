@@ -8,7 +8,6 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import manifest from './manifest.config';
 import { name, version } from './package.json';
-import rollupOptions from './rollup.config';
 
 const isWatch = process.argv.includes('--watch');
 
@@ -27,7 +26,20 @@ export default defineConfig({
         port: process.env.PORT ? parseInt(process.env.PORT) : 7331,
     },
     plugins: [
-        solidPlugin({}),
+        solidPlugin({
+            babel: {
+                presets: [
+                    [
+                        '@babel/preset-typescript',
+                        {
+                            onlyRemoveTypeImports: true,
+                            allowDeclareFields: true,
+                        },
+                    ],
+                ],
+            },
+            extensions: ['ts', 'tsx'],
+        }),
         tailwindcss(),
         tsconfigPaths(),
         // process.env.BROWSER === 'chromium' ? viteManifestHackIssue846 : null,
@@ -55,7 +67,16 @@ export default defineConfig({
         target: 'esnext',
         minify: 'esbuild',
         emptyOutDir: true,
-        rollupOptions,
+        rollupOptions: {
+            output: {
+                dir: 'dist/' + (process.env.BROWSER || 'chromium'),
+                format: 'esm',
+                entryFileNames: '[name].js',
+                chunkFileNames: '[name].js',
+                assetFileNames: '[name].[ext]',
+                inlineDynamicImports: false,
+            },
+        },
     },
 });
 console.log(manifest);

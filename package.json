@@ -17,6 +17,7 @@
         "format": "eslint --fix"
     },
     "devDependencies": {
+        "@babel/preset-typescript": "^7.28.5",
         "@crxjs/vite-plugin": "latest",
         "@eslint/js": "^9.29.0",
         "@solidjs/testing-library": "^0.8.10",
